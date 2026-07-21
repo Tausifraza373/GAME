@@ -1,0 +1,235 @@
+/* Reset and basic */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #c8e6c9, #e0f2f1);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  color: #004d40;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 25px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  max-width: 380px;
+  width: 100%;
+}
+
+/* Heading */
+h1 {
+  color: #004d40;
+  font-size: 40px;
+  margin-bottom: 30px;
+  letter-spacing: 1.5px;
+}
+
+/* Coin styles */
+.coin {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  margin: 30px auto;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.coin .side {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  backface-visibility: hidden;
+  user-select: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heads {
+  background: #ffc107;
+  color: #6a4f00;
+  border: 6px solid #ffca28;
+  transform: rotateY(0deg);
+}
+
+.tails {
+  background: #ff5722;
+  color: #fff3e0;
+  border: 6px solid #ff7043;
+  transform: rotateY(180deg);
+}
+
+/* Flipping animation classes */
+.flipping {
+  animation: flip-animation 1.5s ease forwards;
+}
+
+/* Result text */
+#result {
+  font-size: 24px;
+  color: #333;
+  margin: 25px 0;
+  min-height: 28px;
+  font-weight: 600;
+}
+
+/* Toss button */
+button#toss-btn {
+  padding: 15px 40px;
+  font-size: 22px;
+  background: #00796b;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 121, 107, 0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button#toss-btn:hover {
+  background: #004d40;
+  box-shadow: 0 8px 25px rgba(0, 68, 64, 0.8);
+}
+
+/* Flip keyframes */
+@keyframes flip-animation {
+  0% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    transform: rotateY(540deg);
+  }
+  50% {
+    transform: rotateY(1080deg);
+  }
+  75% {
+    transform: rotateY(1530deg);
+  }
+  100% {
+    transform: rotateY(1800deg);
+  }
+}
+
+/* Creator Card */
+.creator-card {
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c4f, #14536b);
+  border-radius: 20px;
+  padding: 25px 30px;
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.5),
+    inset 0 0 15px rgba(255,255,255,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.creator-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.7),
+    inset 0 0 25px rgba(255,255,255,0.1);
+}
+
+.creator-card img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 3.5px solid #ffd54f;
+  margin-right: 28px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.6);
+  object-fit: cover;
+}
+
+.creator-info h2 {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: #fff176;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.creator-info h4 {
+  margin: 0 0 12px;
+  font-weight: 600;
+  font-style: normal;
+  color: #ffeb3bcc;
+  font-size: 1.15rem;
+  letter-spacing: 0.3px;
+}
+
+.creator-info p {
+  margin: 0;
+  color: #fffde7cc;
+  font-size: 1.05rem;
+  max-width: 240px;
+  line-height: 1.5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  color: #f0e68ccc;
+  user-select: none;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+footer a {
+  color: #ffd54f;
+  text-decoration: none;
+  pointer-events: auto;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #fff176;
+  text-decoration: underline;
+}
+/* Rock Paper Scissors Button */
+button#go-to-rps {
+  padding: 15px 35px;
+  font-size: 20px;
+  background: linear-gradient(135deg, #ff7043, #ffca28);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 25px;
+  margin-left: 15px;
+  box-shadow: 0 6px 15px rgba(255, 112, 67, 0.6);
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+button#go-to-rps:hover {
+  background: linear-gradient(135deg, #e65100, #ffb300);
+  box-shadow: 0 8px 25px rgba(230, 81, 0, 0.75);
+  transform: translateY(-2px);
+}
